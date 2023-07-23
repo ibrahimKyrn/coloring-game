@@ -103,7 +103,7 @@
     <div id="colors"></div>
     <br />
     <input id="picker" type="color" />
-
+    <button id="clear">Clear</button>
     <script>
       const colors = [
         "red",
@@ -145,6 +145,12 @@
           selectedColor = e.currentTarget.value;
           setColor(selectedColor);
         });
+      document.getElementById("clear").addEventListener("click", function (e) {
+        const items = document.getElementsByTagName("path");
+        for (let i = 0; i < items.length; i++) {
+          items[i].setAttribute("fill", "white");
+        }
+      });
     </script>
   </body>
 </html>
